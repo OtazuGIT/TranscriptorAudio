@@ -25,7 +25,7 @@ Convierte notas de voz, clases o reuniones en texto sin que tu audio salga nunca
 - [Cómo funciona](#cómo-funciona)
 - [Rendimiento](#rendimiento)
 - [Solución de problemas](#solución-de-problemas)
-- [Créditos y transparencia](#créditos-y-transparencia)
+- [Créditos](#créditos)
 - [Licencia](#licencia)
 
 ---
@@ -179,41 +179,14 @@ ejecuciones ya no descargan nada.
 
 ---
 
-## Créditos y transparencia
+## Créditos
 
-Esta aplicación **no entrena ni crea ningún modelo de inteligencia artificial**. Funciona
-ensamblando tecnología de código abierto que ya existe, y es justo reconocerlo:
-
-- **El modelo Whisper** fue desarrollado y entrenado por [OpenAI](https://github.com/openai/whisper)
-  con cientos de miles de horas de audio. Es el verdadero "cerebro" que convierte la voz en texto.
-- **El modelo se descarga automáticamente** la primera vez, a través de la librería
-  [faster-whisper](https://github.com/SYSTRAN/faster-whisper) (de SYSTRAN), que es la que ejecuta
-  ese modelo de forma optimizada en tu equipo.
-- **Todo el procesamiento es local.** No hay servidores ni nube: el único límite lo pone tu
-  propia CPU y tu RAM. A mayor potencia, más rápido; con audios largos, más tiempo.
-
-### Para investigar más sobre el modelo
-
-- Whisper (OpenAI): <https://github.com/openai/whisper>
-- Artículo científico: [*Robust Speech Recognition via Large-Scale Weak Supervision*](https://arxiv.org/abs/2212.04356)
-- faster-whisper (SYSTRAN): <https://github.com/SYSTRAN/faster-whisper>
-- Modelos en Hugging Face: <https://huggingface.co/Systran>
-
-### Autoría
-
-- **Idea, dirección y propiedad del proyecto:** Kewin Otazu — [@OtazuGIT](https://github.com/OtazuGIT)
-- **Implementación del código:** generada con [Claude Code](https://claude.com/claude-code) (Anthropic),
-  siguiendo las indicaciones del autor.
-
-> Este proyecto nació de una idea propia; la programación fue asistida por IA. Se documenta así
-> en favor de la transparencia y el crédito honesto a cada parte.
+- Modelo: [Whisper](https://github.com/openai/whisper) (OpenAI)
+- Motor: [faster-whisper](https://github.com/SYSTRAN/faster-whisper) (SYSTRAN)
+- Código generado con [Claude Code](https://claude.com/claude-code) (Anthropic)
 
 ---
 
 ## Licencia
 
-Distribuido bajo licencia [MIT](LICENSE).
-
-<div align="center">
-<sub>Modelo por <a href="https://github.com/openai/whisper">OpenAI</a> · Ejecución con <a href="https://github.com/SYSTRAN/faster-whisper">faster-whisper</a> · Código asistido por <a href="https://claude.com/claude-code">Claude Code</a></sub>
-</div>
+MIT — ver [LICENSE](LICENSE).
