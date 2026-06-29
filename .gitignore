@@ -1,0 +1,31 @@
+# Audios y transcripciones (datos personales: NO subir)
+*.ogg
+*.mp3
+*.m4a
+*.wav
+*.opus
+*.flac
+*.aac
+*.wma
+*.mp4
+*.mkv
+*.webm
+*.txt
+!README*.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Cachés de modelos
+.cache/
+models/
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
