@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎙️ Transcriptor de Audio
+# Transcriptor de Audio
 
 **Transcripción de voz a texto, 100 % local y privada.**
 
@@ -15,21 +15,22 @@ Convierte notas de voz, clases o reuniones en texto sin que tu audio salga nunca
 
 ---
 
-## 📑 Contenido
+## Contenido
 
-- [¿Por qué?](#-por-qué)
-- [Características](#-características)
-- [Instalación](#-instalación)
-- [Uso](#-uso)
-- [Modelos](#-modelos)
-- [Cómo funciona](#-cómo-funciona)
-- [Rendimiento](#-rendimiento)
-- [Solución de problemas](#-solución-de-problemas)
-- [Licencia](#-licencia)
+- [¿Por qué?](#por-qué)
+- [Características](#características)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Modelos](#modelos)
+- [Cómo funciona](#cómo-funciona)
+- [Rendimiento](#rendimiento)
+- [Solución de problemas](#solución-de-problemas)
+- [Créditos y transparencia](#créditos-y-transparencia)
+- [Licencia](#licencia)
 
 ---
 
-## 🎯 ¿Por qué?
+## ¿Por qué?
 
 La mayoría de servicios de transcripción suben tu audio a la nube. Esta herramienta hace
 todo **en tu propia máquina** con el modelo [Whisper](https://github.com/openai/whisper)
@@ -42,21 +43,21 @@ de OpenAI, a través de la implementación optimizada
 
 ---
 
-## ✨ Características
+## Características
 
 | | |
 |---|---|
-| 🔒 **Privado** | Procesamiento 100 % local y offline. |
-| 🗣️ **Multi-idioma** | Optimizado para español; admite cualquier idioma o autodetección. |
-| 📦 **Multi-formato** | `ogg`, `mp3`, `m4a`, `wav`, `opus`, `flac`, `aac`, `wma`, `mp4`, `mkv`, `webm`. |
-| ⚡ **Modelos a elegir** | Desde `tiny` (veloz) hasta `large-v3` (máxima precisión). |
-| 📝 **Salida flexible** | Texto corrido o con marcas de tiempo, guardado junto al audio. |
-| 🎞️ **Por lotes** | Transcribe varios audios en una sola ejecución. |
-| 🪶 **Sin dependencias externas** | No requiere instalar `ffmpeg` (incluye su propio decodificador). |
+| **Privado** | Procesamiento 100 % local y offline. |
+| **Multi-idioma** | Optimizado para español; admite cualquier idioma o autodetección. |
+| **Multi-formato** | `ogg`, `mp3`, `m4a`, `wav`, `opus`, `flac`, `aac`, `wma`, `mp4`, `mkv`, `webm`. |
+| **Modelos a elegir** | Desde `tiny` (veloz) hasta `large-v3` (máxima precisión). |
+| **Salida flexible** | Texto corrido o con marcas de tiempo, guardado junto al audio. |
+| **Por lotes** | Transcribe varios audios en una sola ejecución. |
+| **Sin dependencias externas** | No requiere instalar `ffmpeg` (incluye su propio decodificador). |
 
 ---
 
-## 🚀 Instalación
+## Instalación
 
 ```bash
 git clone https://github.com/OtazuGIT/TranscriptorAudio.git
@@ -68,7 +69,7 @@ pip install -r requirements.txt
 
 ---
 
-## 💻 Uso
+## Uso
 
 ```bash
 python transcribe.py "nota.ogg"
@@ -102,29 +103,29 @@ python transcribe.py "audio.ogg" --lang auto
 | `--timestamps`, `-t` | Guarda la transcripción con marcas de tiempo. |
 | `--help` | Muestra la ayuda completa. |
 
-💡 **Truco:** en lugar de escribir la ruta del audio, **arrástralo a la ventana de la terminal**
+**Sugerencia:** en lugar de escribir la ruta del audio, arrástralo a la ventana de la terminal
 y la ruta se pega sola.
 
 ---
 
-## 🧠 Modelos
+## Modelos
 
 | Modelo | Descarga | Velocidad (CPU) | Precisión | Recomendado para |
 |---|---|---|---|---|
-| `tiny`     | ~75 MB  | ⚡⚡⚡⚡ | ⭐ | Pruebas rápidas |
-| `base`     | ~145 MB | ⚡⚡⚡ | ⭐⭐ | Borradores |
-| `small`    | ~480 MB | ⚡⚡ | ⭐⭐⭐ | Audios largos |
-| `medium`   | ~1.5 GB | ⚡ | ⭐⭐⭐⭐ | **Notas de voz (por defecto)** |
-| `large-v3` | ~3 GB   | 🐢 | ⭐⭐⭐⭐⭐ | Términos técnicos / nombres difíciles |
+| `tiny`     | ~75 MB  | Muy alta | Baja | Pruebas rápidas |
+| `base`     | ~145 MB | Alta | Media | Borradores |
+| `small`    | ~480 MB | Media | Buena | Audios largos |
+| `medium`   | ~1.5 GB | Baja | Muy buena | **Notas de voz (por defecto)** |
+| `large-v3` | ~3 GB   | Muy baja | Máxima | Términos técnicos / nombres difíciles |
 
 Los modelos se descargan **una sola vez** y quedan cacheados para uso sin conexión.
 
 ---
 
-## ⚙️ Cómo funciona
+## Cómo funciona
 
 ```
-Audio ──▶ Espectrograma Mel ──▶ Encoder ──▶ Decoder ──▶ Texto
+Audio --> Espectrograma Mel --> Encoder --> Decoder --> Texto
             (representación        (resume      (genera el
              del sonido)           el audio)    texto palabra
                                                 a palabra)
@@ -138,22 +139,22 @@ Audio ──▶ Espectrograma Mel ──▶ Encoder ──▶ Decoder ──▶ 
 
 ---
 
-## 📊 Rendimiento
+## Rendimiento
 
 Tiempo de procesamiento aproximado en **CPU** con el modelo `medium`:
 
 | Duración del audio | Tiempo estimado |
 |---|---|
 | 1 minuto  | ~1 min |
-| 10 minutos | ~10–15 min |
-| 1 hora    | ~1–1.5 h |
+| 10 minutos | ~10-15 min |
+| 1 hora    | ~1-1.5 h |
 
 Para audios largos, usar `--small` reduce el tiempo a la mitad o menos.
 Con una GPU NVIDIA (CUDA) el proceso es varias veces más rápido.
 
 ---
 
-## 🛠️ Solución de problemas
+## Solución de problemas
 
 <details>
 <summary><b>La transcripción tiene errores en nombres propios o términos técnicos</b></summary>
@@ -166,6 +167,7 @@ así que con vocabulario muy específico puede equivocarse.
 <summary><b>Aparece texto inventado en silencios o música</b></summary>
 
 El filtro VAD ya está activado para mitigarlo. Si persiste, prueba con audio de mejor calidad.
+Las canciones con música de fondo son un caso difícil para el modelo.
 </details>
 
 <details>
@@ -177,30 +179,30 @@ ejecuciones ya no descargan nada.
 
 ---
 
-## 🙏 Créditos y transparencia
+## Créditos y transparencia
 
 Esta aplicación **no entrena ni crea ningún modelo de inteligencia artificial**. Funciona
 ensamblando tecnología de código abierto que ya existe, y es justo reconocerlo:
 
-- 🧠 **El modelo Whisper** fue desarrollado y **entrenado por [OpenAI](https://github.com/openai/whisper)**
+- **El modelo Whisper** fue desarrollado y entrenado por [OpenAI](https://github.com/openai/whisper)
   con cientos de miles de horas de audio. Es el verdadero "cerebro" que convierte la voz en texto.
-- 📦 **El modelo se descarga automáticamente** la primera vez, a través de la librería
-  **[faster-whisper](https://github.com/SYSTRAN/faster-whisper)** (de SYSTRAN), que es la que ejecuta
+- **El modelo se descarga automáticamente** la primera vez, a través de la librería
+  [faster-whisper](https://github.com/SYSTRAN/faster-whisper) (de SYSTRAN), que es la que ejecuta
   ese modelo de forma optimizada en tu equipo.
-- 💻 **Todo el procesamiento es local.** No hay servidores ni nube: **el único límite lo pone tu
-  propia CPU y tu RAM**. A mayor potencia, más rápido; con audios largos, más tiempo.
+- **Todo el procesamiento es local.** No hay servidores ni nube: el único límite lo pone tu
+  propia CPU y tu RAM. A mayor potencia, más rápido; con audios largos, más tiempo.
 
-### 🔍 Para investigar más sobre el modelo
+### Para investigar más sobre el modelo
 
 - Whisper (OpenAI): <https://github.com/openai/whisper>
 - Artículo científico: [*Robust Speech Recognition via Large-Scale Weak Supervision*](https://arxiv.org/abs/2212.04356)
 - faster-whisper (SYSTRAN): <https://github.com/SYSTRAN/faster-whisper>
 - Modelos en Hugging Face: <https://huggingface.co/Systran>
 
-### ✍️ Autoría
+### Autoría
 
 - **Idea, dirección y propiedad del proyecto:** Kewin Otazu — [@OtazuGIT](https://github.com/OtazuGIT)
-- **Implementación del código:** generada con **[Claude Code](https://claude.com/claude-code)** (Anthropic),
+- **Implementación del código:** generada con [Claude Code](https://claude.com/claude-code) (Anthropic),
   siguiendo las indicaciones del autor.
 
 > Este proyecto nació de una idea propia; la programación fue asistida por IA. Se documenta así
@@ -208,7 +210,7 @@ ensamblando tecnología de código abierto que ya existe, y es justo reconocerlo
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Distribuido bajo licencia [MIT](LICENSE).
 
